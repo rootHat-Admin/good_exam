@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Экзаменатор</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- MENU -->
+<div class="menu" id="menu">
+  <button class="btn" onclick="startTicket()">Генерация билета</button>
+  <button class="btn" onclick="startTest()">Тестирование</button>
+</div>
+
+<!-- TICKET -->
+<div class="container" id="ticketContainer">
+  <div id="ticketContent"></div>
+
+  <button class="btn finish-btn" onclick="backToMenu()">
+    Назад в меню
+  </button>
+</div>
+
+<!-- TEST -->
+<div class="container" id="testContainer">
+  <div id="question" class="question-box"></div>
+  <div id="options"></div>
+
+  <div class="timer" id="timer">
+    <div class="timer-bar" id="timerBar"></div>
+  </div>
+
+  <div class="indicators" id="indicators"></div>
+
+  <!-- 🔴 КНОПКА ЗАВЕРШИТЬ -->
+  <button class="btn finish-btn" onclick="showResult()">
+    Завершить тест
+  </button>
+</div>
+
+<!-- RESULT -->
+<div class="container" id="resultBox"></div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

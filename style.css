@@ -1,0 +1,305 @@
+html, body {
+  height: 100%;
+}
+
+
+/* MENU */
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  height: 100vh;
+  width: 100%;
+}
+
+.screen {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/* BUTTON (Apple style) */
+.btn {
+  padding: 14px 26px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+
+  background: #ffffff;
+  color: #1d1d1f;
+
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+}
+
+/* CONTAINER */
+.container {
+  display: none;
+  padding: 24px;
+  width: 100%;
+  max-width: 720px;
+  margin: auto;
+}
+
+/* QUESTION */
+.question-box {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  margin-bottom: 20px;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* контейнер вариантов */
+#options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.finish-btn {
+  margin-top: 20px;
+  width: 100%;
+
+  background: #ff3b30;
+  color: white;
+
+  border: none;
+  border-radius: 12px;
+
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.finish-btn:hover {
+  background: #d70015;
+  transform: scale(1.01);
+}
+
+#ticketContent {
+  max-width: 700px;
+  margin: auto;
+}
+
+#ticketContent h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+/* OPTIONS */
+.option {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+
+  padding: 15px;   /* 🔥 БОЛЬШЕ */
+  font-size: 16px;
+
+  margin: 2px 0;  /* 🔥 РАССТОЯНИЕ */
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+.option:hover {
+  transform: scale(1.01);
+  border-color: #c7c7cc;
+}
+
+/* ✅ correct (Apple green accent) */
+.correct {
+  background: #34c759 !important;
+  color: white !important;
+  border-color: #34c759 !important;
+}
+
+/* ❌ wrong (Apple red accent) */
+.wrong {
+  background: #ff3b30 !important;
+  color: white !important;
+  border-color: #ff3b30 !important;
+}
+
+/* INDICATORS */
+.indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.box {
+  width: 40px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e5e5ea;
+  color: #1d1d1f;
+}
+
+.active {
+  outline: 2px solid #007aff;
+}
+
+/* STATUS COLORS */
+.green {
+  background: #34c759 !important;
+  color: white;
+}
+
+.red {
+  background: #ff3b30 !important;
+  color: white;
+}
+
+/* TIMER */
+.timer {
+  height: 6px;
+  background: #e5e5ea;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 12px;
+
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.25s ease;
+}
+
+.timer.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timer.hide {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.timer-bar {
+  height: 100%;
+  width: 0%;
+  background: #007aff;
+  transition: width 3s linear;
+}
+
+/* RESULT */
+.result {
+  text-align: center;
+  font-size: 22px;
+  background: #fff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+.question-box,
+#options {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 12px;
+  }
+
+  /* MENU */
+  .menu {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 16px;
+  }
+
+  /* ВОПРОС */
+  .question-box {
+    font-size: 17px;
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  /* ВАРИАНТЫ (ВАЖНО!) */
+  .option {
+    font-size: 16px;
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  /* ИНДИКАТОРЫ */
+  .indicators {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .box {
+    width: 28px;   /* 🔥 БОЛЬШЕ */
+    height: 28px;
+    font-size: 12px;
+  }
+
+  /* КНОПКА */
+  .finish-btn {
+    font-size: 16px;
+    padding: 16px;
+  }
+
+  /* РЕЗУЛЬТАТ */
+  .result {
+    font-size: 18px;
+    padding: 20px;
+  }
+}
